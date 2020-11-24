@@ -14,7 +14,7 @@ namespace DependencyInjectionContainerTest
     {
        
         [TestMethod]
-        public void SimpleDependencyTest()
+        public void CorrectWorkOfContainerTest()
         {
             var dependencies = new DependencyConfiguration();
             dependencies.Register<IServiceTwo, ServiceFromInterface>();
@@ -32,7 +32,7 @@ namespace DependencyInjectionContainerTest
         }
 
         [TestMethod]
-        public void SimpleErrorDependencyTest()
+        public void ReturningNullIfIncorrectImplTest()
         {
             var dependencies = new DependencyConfiguration();
             dependencies.Register<AbstractService, ErrorAbstractImpl>();
@@ -47,7 +47,7 @@ namespace DependencyInjectionContainerTest
         }
 
         [TestMethod]
-        public void SimpleRecursionDependencyTest()
+        public void RecursionDependencyTest()
         {
             var dependencies = new DependencyConfiguration();
             dependencies.Register<IRepository, RepositoryImplOne>();
@@ -102,7 +102,7 @@ namespace DependencyInjectionContainerTest
         }
 
         [TestMethod]
-        public void StandartGenericDependencyTest()
+        public void GenericDependencyTest()
         {
             var dependencies = new DependencyConfiguration();
             dependencies.Register<IRepository, RepositoryImplOne>();
